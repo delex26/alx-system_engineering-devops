@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1v | awk '{printf "%s%s", $0, (NR%2==0 || $0~/\/$/)?", ":"\n"}'
+ls -ap | tr '\n' ',' | sed 's/,$/\n/'
