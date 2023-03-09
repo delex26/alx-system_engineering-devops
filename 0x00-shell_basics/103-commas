@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap | tr '\n' ',' | sed 's/,$/\n/' | sed 's/^\|,$/, /g'
+ls -1a | awk '{printf "%s%s", $0, NR%2?",":ORS}'
